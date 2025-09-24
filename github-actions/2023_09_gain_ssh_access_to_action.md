@@ -11,7 +11,7 @@ I use this snippet quite a bit to drop into the container to debug paths/environ
 ```yaml
 ---
 - name: Setup upterm session
-  uses: lhotari/action-upterm@v1
+  uses: owenthereal/action-upterm@v1
   with:
     ## limits ssh access and adds the ssh public key for the user which triggered the workflow
     limit-access-to-actor: true
@@ -36,7 +36,7 @@ jobs:
 
       ################ COPY STARTING HERE  #####################
       - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+        uses: owenthereal/action-upterm@v1
         with:
         ## limits ssh access and adds the ssh public key for the user which triggered the workflow
           limit-access-to-actor: true
@@ -58,7 +58,7 @@ Putting this at the end of a workflow will give you access to any failing action
 ```yaml
 ---
 - name: Setup upterm session
-  uses: lhotari/action-upterm@v1
+  uses: owenthereal/action-upterm@v1
   if: ${{ failure() }}
   with:
     ## limits ssh access and adds the ssh public key for the user which triggered the workflow
@@ -82,7 +82,7 @@ jobs:
 
       ################ COPY STARTING HERE  #####################
       - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+        uses: owenthereal/action-upterm@v1
         if: ${{ failure() }}
         with:
         ## limits ssh access and adds the ssh public key for the user which triggered the workflow
